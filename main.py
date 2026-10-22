@@ -18,6 +18,8 @@ for s in students:
     print(s)
 
 
+
+
 c = Course("Programming for AI")
 c.add_student("Saad ", 88)
 c.add_student("Sara Niaz", 92)
@@ -32,6 +34,16 @@ try:
 except InvalidMarksError as e:
     print("Error:", e)
 print(c)
+
+
+
+c = Course("X"); c.add_student("Ali",88)
+c.remove_student("Ali")
+print(len(c))
+try:
+    c.remove_student("Zara")
+except KeyError as e:
+    print("KeyError:" ,e)
 
 
 course = load_course("Programming for AI", "marks.txt")

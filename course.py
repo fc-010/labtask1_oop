@@ -30,6 +30,11 @@ class Course:
     def __str__(self) -> str:
         return f"{self.name}: {len(self)} students, average {self.average():.1f}"
 
+    def remove_student(self , name : str) -> None:
+        if name not in self.marks:
+            raise KeyError(f"No Student named{name}")
+        del self.marks[name]
+
 def load_course(name: str, filename: str) -> Course:
     course = Course(name)
     try:
